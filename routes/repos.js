@@ -31,7 +31,6 @@ router.post('/', async(req,res) => {
 // modify repository comment
 router.put('/:id', async (req, res) => {
     try {
-        console.log(req.body)
         const filter = {repoId: req.params.id}
         const repo = await Repo.findOneAndUpdate(filter, req.body, { new: true });
         res.status(200).send(repo)
